@@ -18,6 +18,6 @@ COPY . .
 EXPOSE 6000
 
 # Run streamlit when the container launches
-CMD ["streamlit", "run", "frontend.py"]
+CMD ["streamlit", "run", "front.py"]
 
 
