@@ -8,3 +8,4 @@ google.generativeai
 streamlit_extras
 google-search-results
 wikipedia
+numexpr
