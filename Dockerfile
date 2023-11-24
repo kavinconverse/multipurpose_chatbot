@@ -15,7 +15,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 #create port
-EXPOSE 6000
+EXPOSE 8501
 
 # Run streamlit when the container launches
 CMD ["streamlit", "run", "front.py"]
