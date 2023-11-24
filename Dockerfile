@@ -1,21 +1,21 @@
-# Use an official Python runtime as a parent image
-FROM python:3.11
+#set of instructions to create image
+#parent image
+FROM python:3.11.6-slim
 
-# Set the working directory to /app
-WORKDIR /app1
+#directory on image
+WORKDIR /app
 
-# Copy the current directory all the contents into the container at /app
-COPY . .
+#copy file from local to image directory'
+COPY requirements.txt .
 
-# Install any needed packages specified in requirements.txt
+#run the installation file
 RUN pip install -r requirements.txt
 
-# Make port 8501 available to the world outside this container
-EXPOSE 8501
+#copy all file
+COPY . .
 
-# Load environment variables from the .env file
-ENV GOOGLE_API_KEY="AIzaSyD3QTNG2zxXusjLaf5O6HjRAFcUVSuFKlg"
-ENV ENV_FILE=".env"
+#create port
+EXPOSE 6000
 
 # Run streamlit when the container launches
 CMD ["streamlit", "run", "frontend.py"]
