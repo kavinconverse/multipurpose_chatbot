@@ -17,6 +17,7 @@ GOOGLE_API_KEY = st.sidebar.text_input("Google Palm API Key", key="gp_chatbot_ap
 if not GOOGLE_API_KEY:
     st.warning("Please add your GPalm API key in the sidebar to continue . You can get a key at "" https://developers.generativeai.google/products/makersuite")
     st.stop()
+os.environ['GOOGLE_API_KEY'] = GOOGLE_API_KEY
 selected_model = st.sidebar.selectbox('Choose Chatbot model', ['None','PDF_model', 'Agent_model'], key='selected_model',index=None,placeholder='Select Chat method')
 if selected_model is None:
     st.sidebar.error('!oops Select any one type None selected ⚠️🚨')
